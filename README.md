@@ -1,23 +1,34 @@
-# NeoAli Secure Password Generator
+---
 
-This repository contains a secure password generator with *tamper-evident* configuration.
+## 🧩 About the Project
 
-## Important security note
-**private_key.pem is NOT included.** You must generate your own keypair using `generate_keys.py`
-and keep the private key secret. Never commit `private_key.pem` to a public repository.
+**NeoAli Secure Password Generator** is a high-security password tool built in Python,  
+designed to ensure tamper protection and encrypted personalization.
 
-## Files
-- `generate_keys.py` — generate an Ed25519 keypair (private_key.pem, public_key.pem)
-- `create_config.py` — create and encrypt `config.json` and sign it (requires private_key.pem)
-- `main.py` — verify signature, decrypt personal section, generate strong password
-- `requirements.txt` — dependencies
-- `README.md` — this file
+Unlike typical password generators, this one includes:
+- 🔒 **Encrypted configuration** – personal data is AES-encrypted and protected with Ed25519 signatures.  
+- 🧬 **Signature verification** – detects any unauthorized modifications automatically.  
+- ⚙️ **User encryption key** – only you can decrypt your personalized section.  
+- ⚡ **Strong random generation** – powered by `secrets` for cryptographically secure randomness.
 
-## Quick start
-```bash
-python -m pip install -r requirements.txt
-python generate_keys.py      # generate keys on your secure machine
-python create_config.py      # create config.json and config.sig (requires private_key.pem)
-python main.py               # run generator (requires config.json, config.sig, public_key.pem)
-```
-"# Password-Generator" 
+---
+
+## 🧠 Tech Stack
+
+| Category | Technology |
+|-----------|-------------|
+| Language | Python 3.12+ |
+| Crypto | `cryptography`, `Ed25519`, `Fernet` |
+| Styling | `colorama` |
+| Security | Key signing, local encryption |
+| Versioning | Git & GitHub |
+
+---
+
+## 🚀 How to Use
+
+1. **Generate your keys**
+   ```bash
+   python generate_keys.py
+
+
